@@ -1,0 +1,7 @@
+{
+  "lerp": 0.085,
+  "wheelMultiplier": 0.95,
+  "heroScroll": 0.6,
+  "featureScroll": 1,
+  "parallax": 0.14
+}

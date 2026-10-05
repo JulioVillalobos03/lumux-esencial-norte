@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import Scene from '../components/Scene.astro';
+import Blueprint from '../components/Blueprint.astro';
+import Contours from '../components/Contours.astro';
+import {site as s} from '../lib/content';
+import {experience as x} from '../lib/experience';
+const projects=s.projects!;
+---
+<Layout>
+  <Header />
+  <main id="contenido">
+    <section id="inicio" class="hero">
+      <figure class="hero-image"><img src={s.hero.image} srcset={`${s.hero.image.replace('.webp','-768.webp')} 768w, ${s.hero.image} 1600w`} sizes="100vw" width="1600" height="900" alt={s.hero.imageAlt} fetchpriority="high" /></figure>
+      <div class="hero-coordinate" aria-hidden="true"><span>Un lugar para pertenecer</span><svg viewBox="0 0 72 72"><path d="M36 4V68M4 36H68M36 4L29 16M36 4L43 16" fill="none" stroke="currentColor"/><circle cx="36" cy="36" r="24" fill="none" stroke="currentColor"/></svg></div>
+      <div class="hero-copy"><p class="eyebrow">Arquitectura · Interiorismo · Lugar</p><h1>{s.hero.lines.map(t=><span>{t}</span>)}</h1><div class="hero-introduction"><p>{s.hero.description}</p><a class="line-link" href={s.hero.cta.href}>{s.hero.cta.label}<span aria-hidden="true">↘</span></a></div></div>
+      <div class="hero-bottom"><p>{s.hero.caption}</p><span aria-hidden="true">01 / 08</span></div>
+    </section>
+    {s.sections.includes('estudio')&&<section id="estudio" class="manifesto section">
+      <div class="section-index"><span>01 — Estudio</span><span>La mirada</span></div>
+      <div class="manifesto-statement"><h2 data-reveal>{x.manifesto.title}</h2><p>{x.manifesto.description}</p></div>
+      <div class="manifesto-plan"><Blueprint /><div class="plan-caption"><p>{s.story.description}</p><span>{s.story.note}</span></div></div>
+    </section>}
+    {s.sections.includes('proyectos')&&<section id="proyectos" class="works">
+      <div class="work-opening section"><div class="section-index"><span>02 — Obra imaginada</span><span>Espacios en perspectiva</span></div><h2 data-reveal>{projects.title}</h2><p>{projects.description}</p></div>
+      {projects.items.map((p,i)=><article class={`work-chapter work-chapter-${i+1}`}>
+        <div class="work-margin"><span>{String(i+1).padStart(2,'0')}</span><span>{p.category}</span></div>
+        <figure class="work-image"><img src={p.image} srcset={`${p.image.replace('.webp','-768.webp')} 768w, ${p.image} 1600w`} sizes="(min-width:1024px) 85vw, 100vw" width="1600" height="1000" loading="lazy" alt={p.imageAlt} data-parallax /></figure>
+        <div class="work-caption"><h3 data-reveal>{p.title}</h3><p>{p.description}</p><a class="line-link" href="#contacto">Imaginar mi espacio <span aria-hidden="true">↗</span></a></div>
+      </article>)}
+    </section>}
+    {s.sections.includes('recorrido')&&<section id="recorrido" class="pavilion-journey" data-journey>
+      <div class="pavilion-sticky">
+        <Scene />
+        <div class="journey-heading"><p class="eyebrow">03 — Exploración espacial</p><h2>{x.journey.title}</h2><p class="journey-description">{x.journey.description}</p></div>
+        <div class="journey-scroll" aria-hidden="true"><span>Terreno</span><span class="journey-track"><i /></span><span>Luz</span></div>
+      </div>
+    </section>}
+    {s.sections.includes('materia')&&<section id="materia" class="matter section">
+      <div class="section-index"><span>04 — Materia</span><span>Una decisión que se siente</span></div>
+      <div class="matter-intro"><h2 data-reveal>{x.materials.title}</h2><p>{x.materials.description}</p></div>
+      <div class="material-samples" role="group" aria-label="Acabado del pabellón">
+        {x.materials.items.map((m,i)=><button type="button" class={`material-sample ${m.value}`} data-material={m.value} aria-pressed={i===0?'true':'false'} aria-controls={s.sections.includes('recorrido')?'pavilion-scene':undefined} disabled>
+          <svg viewBox="0 0 320 320" aria-hidden="true"><defs><pattern id={`sample-${m.value}`} width={m.value==='wood'?32:48} height={m.value==='wood'?120:48} patternUnits="userSpaceOnUse"><path d={m.value==='wood'?'M8 -10C-8 25 24 55 8 120M20 -10C4 30 36 60 20 120':m.value==='stone'?'M0 0L16 24 48 32M16 24L0 48M16 24L32 0M32 0L48 16':'M3 8L6 6M23 18L25 20M36 36L40 37M5 38L8 39'} fill="none" stroke="currentColor" stroke-width={m.value==='wood'?'.6':'.8'} /></pattern></defs><rect width="320" height="320" class="sample-base"/><rect width="320" height="320" fill={`url(#sample-${m.value})`} opacity=".4"/><path d="M50 235L135 185 265 223 180 273Z" fill="currentColor" opacity=".15"/><path d="M50 235V110L135 60 265 98V223L180 273Z" fill="none" stroke="currentColor"/><path d="M50 110L180 148 265 98M180 148V273M135 60V185L50 235M135 185L265 223" fill="none" stroke="currentColor"/><text x="22" y="302" fill="currentColor" font-size="12">{String(i+1).padStart(2,'0')} — {m.title}</text></svg>
+          <span class="sample-label"><strong>{m.title}</strong><span aria-hidden="true">↗</span></span><span class="sample-description">{m.description}</span>
+        </button>)}
+      </div><p class="material-feedback" role="status" aria-live="polite">Acabado seleccionado: Piedra.</p><a class="line-link" href="#recorrido">Ver el acabado en el pabellón <span aria-hidden="true">↑</span></a>
+    </section>}
+    {s.sections.includes('territorio')&&<section id="territorio" class="territory">
+      <figure><img src={x.territory.image} srcset={`${x.territory.image.replace('.webp','-768.webp')} 768w, ${x.territory.image} 1600w`} sizes="100vw" width="1600" height="1000" alt={x.territory.imageAlt} loading="lazy" data-parallax /></figure>
+      <Contours />
+      <div class="territory-copy"><p class="eyebrow">05 — Territorio</p><h2 data-reveal>{x.territory.title}</h2><p>{x.territory.description}</p></div><div class="territory-legend" aria-hidden="true"><span>Topografía / Luz / Vegetación</span><span>Un proyecto en su paisaje</span></div>
+    </section>}
+    {s.sections.includes('bitacora')&&<section id="bitacora" class="journal section">
+      <div class="section-index"><span>06 — Bitácora</span><span>Ideas en proceso</span></div>
+      <div class="journal-heading"><h2 data-reveal>{x.journal.title}</h2><p>{x.journal.description}</p></div>
+      <div class="journal-entries">{x.journal.items.map((n,i)=><article class="journal-entry"><div class="journal-diagram" aria-hidden="true">{i===0?<svg viewBox="0 0 480 330"><path d="M50 250L220 160 430 210 260 300ZM50 250V120L220 30 430 80V210M50 120L260 170 430 80M260 170V300M220 30V160" fill="none" stroke="currentColor" data-draw/><path d="M135 210L240 153 349 179M135 210V129L240 72 349 98V179M240 72V153M135 129L244 155 349 98" fill="none" stroke="currentColor" data-draw/><path d="M23 272L53 280M38 268L38 284M434 233L464 241M449 229L449 245" fill="none" stroke="currentColor"/></svg>:<svg viewBox="0 0 480 330"><path d="M50 270H430M150 270V80H330V270M140 80H350" fill="none" stroke="currentColor" data-draw/><path d="M85 45L225 280M130 30L280 280M178 30L334 280M232 30L390 280" fill="none" stroke="currentColor" stroke-dasharray="4 7"/><path d="M150 270L240 210H390L330 270Z" fill="currentColor" opacity=".12"/><path d="M310 47A35 35 0 0 1 345 12" fill="none" stroke="currentColor" data-draw/></svg>}</div><p class="eyebrow">Apunte {String(i+1).padStart(2,'0')}</p><h3 data-reveal>{n.title}</h3><p>{n.description}</p></article>)}</div>
+    </section>}
+    <Contact />
+  </main>
+  <script>import '../scripts/motion';</script>
+</Layout>

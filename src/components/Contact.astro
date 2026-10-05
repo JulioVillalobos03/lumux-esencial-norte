@@ -1,0 +1,16 @@
+---
+import {site as s} from '../lib/content';
+---
+<section class="project-request section" id="contacto">
+  <div class="section-index"><span>07 — Un nuevo lugar</span><span>Conversación inicial</span></div>
+  <div class="request-heading"><h2 data-reveal>{s.contact.title}</h2><p>{s.contact.description}</p><a class="line-link" href={s.contact.email.href} data-track="email">{s.contact.email.label}<span aria-hidden="true">↗</span></a></div>
+  <form class="contact-form project-sheet" novalidate data-valid={s.ui.valid} data-error={s.ui.error} data-loading={s.ui.loading} data-required={s.ui.required} data-email-error={s.ui.emailError} data-minimum={s.ui.minimum}>
+    <div class="sheet-heading" aria-hidden="true"><span>N / Proyecto por imaginar</span><span>Solicitud inicial</span></div>
+    <div class="sheet-field"><span class="field-number" aria-hidden="true">01</span><div><label for="name">{s.ui.name} *</label><input id="name" name="name" required maxlength="120" autocomplete="name" aria-describedby="name-error"/><span class="field-error" id="name-error"></span></div></div>
+    <div class="sheet-field"><span class="field-number" aria-hidden="true">02</span><div><label for="email">{s.ui.email} *</label><input id="email" name="email" type="email" required maxlength="254" autocomplete="email" aria-describedby="email-error"/><span class="field-error" id="email-error"></span></div></div>
+    <div class="sheet-field"><span class="field-number" aria-hidden="true">03</span><div><label for="message">{s.ui.message} *</label><textarea id="message" name="message" required minlength="10" maxlength="1500" rows="3" aria-describedby="message-error"></textarea><span class="field-error" id="message-error"></span></div></div>
+    <div class="sheet-submit"><p class="form-note">{s.ui.formNote}</p><button class="button" type="submit" disabled>{s.ui.submit}<span aria-hidden="true">↗</span></button></div><p role="status" class="form-status" aria-live="polite"></p><noscript><p>{s.ui.noJs}</p></noscript>
+  </form>
+</section>
+<footer class="site-footer norte-footer"><a class="footer-mark" href="#inicio" aria-label="Norte, volver al inicio">{s.brand.name}<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M10 80L10 25 50 5 90 25V80L50 100ZM10 25L50 45 90 25M50 45V100" fill="none" stroke="currentColor"/></svg></a><div><p>{s.ui.demo}</p><p>{s.ui.footer}</p><p>{s.ui.copyright}</p></div><button class="motion-control" type="button" data-pause={s.ui.pause} data-resume={s.ui.resume} aria-pressed="false" disabled>{s.ui.pause}</button></footer>
+<script>import '../scripts/interactions';</script>

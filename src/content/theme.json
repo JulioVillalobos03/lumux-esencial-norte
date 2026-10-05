@@ -1,0 +1,17 @@
+{
+  "paper": "oklch(96% 0.015 85)",
+  "surface": "oklch(91% 0.025 85)",
+  "ink": "oklch(26% 0.03 80)",
+  "muted": "oklch(43% 0.02 80)",
+  "rule": "oklch(73% 0.035 80)",
+  "accent": "oklch(40% 0.08 140)",
+  "display": "Syne Variable",
+  "body": "Manrope Variable",
+  "accentInk": "oklch(96% 0.015 85)",
+  "inverse": "oklch(26% 0.03 80)",
+  "inverseInk": "oklch(96% 0.015 85)",
+  "white": "oklch(97% 0.01 80)",
+  "shadow": "oklch(13% 0.02 30)",
+  "scenePrimary": "oklch(65% 0.10 80)",
+  "sceneSecondary": "oklch(34% 0.08 140)"
+}

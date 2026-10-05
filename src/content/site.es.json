@@ -1,0 +1,147 @@
+{
+  "kind": "architecture",
+  "ui": {
+    "skip": "Saltar al contenido",
+    "menu": "Menú",
+    "navigation": "Navegación principal",
+    "demo": "Concepto de demostración · Marca y proyectos ficticios",
+    "name": "Tu nombre",
+    "email": "Correo electrónico",
+    "message": "El lugar, las necesidades y la idea",
+    "submit": "Revisar mensaje",
+    "formNote": "Formulario de demostración. No envía ni guarda datos.",
+    "valid": "Mensaje validado. Esta demo no ha enviado ningún mensaje.",
+    "error": "Revisa los campos indicados.",
+    "loading": "Revisando…",
+    "required": "Completa este campo.",
+    "emailError": "Escribe un correo válido.",
+    "minimum": "Escribe al menos 10 caracteres.",
+    "noJs": "El formulario de prueba necesita JavaScript. No realiza envíos.",
+    "footer": "Una base Lumux Esencial · No exclusiva · v2.0",
+    "pause": "Pausar movimiento",
+    "resume": "Reanudar movimiento",
+    "sceneFallback": "Vista estática del concepto.",
+    "sceneLabel": "Escena interactiva de demostración",
+    "explore": "Explorar",
+    "close": "Cerrar",
+    "copyright": "© 2026 · Demostración"
+  },
+  "version": "2.0.0",
+  "contact": {
+    "title": "Tu lugar. Nuestro próximo trazo.",
+    "description": "Cuéntanos qué estás imaginando. Haremos espacio para darle forma.",
+    "email": {
+      "label": "hola@example.com",
+      "href": "mailto:hola@example.com"
+    }
+  },
+  "seo": {
+    "title": "Norte · Arquitectura con intención | Demo",
+    "description": "Concepto de estudio de arquitectura e interiorismo. Base independiente Lumux Esencial."
+  },
+  "brand": {
+    "name": "NORTE",
+    "descriptor": "Arquitectura & espacios"
+  },
+  "nav": [
+    {
+      "label": "Obra",
+      "href": "#proyectos"
+    },
+    {
+      "label": "Recorrido",
+      "href": "#recorrido"
+    },
+    {
+      "label": "Nuevo proyecto",
+      "href": "#contacto"
+    }
+  ],
+  "hero": {
+    "lines": [
+      "Habitar",
+      "el horizonte."
+    ],
+    "description": "Arquitectura que parte de la luz, el lugar y tu forma de vivir.",
+    "image": "/images/hero.webp",
+    "imageAlt": "Residencia conceptual de piedra caliza en un paisaje árido. Imagen generada para esta demo.",
+    "caption": "Casa del horizonte · Concepto residencial",
+    "cta": {
+      "label": "Explorar proyectos",
+      "href": "#proyectos"
+    }
+  },
+  "projects": {
+    "title": "El lugar es el punto de partida.",
+    "description": "Una selección de espacios imaginados para vivir, encontrarse y hacer una pausa.",
+    "items": [
+      {
+        "title": "Casa del horizonte",
+        "category": "Residencial",
+        "description": "Volúmenes de piedra que enmarcan el paisaje.",
+        "image": "/images/hero.webp",
+        "imageAlt": "Residencia de piedra y vegetación desértica, concepto generado."
+      },
+      {
+        "title": "Patio adentro",
+        "category": "Interiores",
+        "description": "Luz abierta, materia natural y un ritmo cotidiano.",
+        "image": "/images/interior.webp",
+        "imageAlt": "Interior conceptual con madera, piedra y luz de patio. Imagen generada."
+      }
+    ]
+  },
+  "story": {
+    "title": "Escuchar el lugar. Diseñar lo que importa.",
+    "description": "Somos un estudio de arquitectura e interiorismo. Nos interesa lo que pasa entre un espacio y quienes lo habitan: la luz que cambia, la materia que permanece y la vida que encuentra su lugar.",
+    "note": "Arquitectura · Interiorismo · Dirección de proyecto"
+  },
+  "scene": {
+    "title": "Del trazo al espacio.",
+    "description": "Recorre la maqueta al desplazarte: el techo se eleva y la cámara cambia de perspectiva. También puedes elegir una vista fija.",
+    "label": "Pabellón Norte · Maqueta conceptual",
+    "mode": "house",
+    "fallback": "/images/model.svg",
+    "controls": [
+      {
+        "label": "Recorrido",
+        "value": "scroll"
+      },
+      {
+        "label": "Volumen",
+        "value": "solid"
+      },
+      {
+        "label": "Despiece",
+        "value": "exploded"
+      }
+    ]
+  },
+  "process": {
+    "title": "Pensado contigo.",
+    "items": [
+      {
+        "title": "Entender",
+        "description": "Tu forma de habitar, el sitio y sus posibilidades."
+      },
+      {
+        "title": "Proyectar",
+        "description": "Una dirección clara, explorada en planos y materia."
+      },
+      {
+        "title": "Acompañar",
+        "description": "Decisiones documentadas para llevar la idea al espacio."
+      }
+    ]
+  },
+  "sections": [
+    "inicio",
+    "estudio",
+    "proyectos",
+    "recorrido",
+    "materia",
+    "territorio",
+    "bitacora",
+    "contacto"
+  ]
+}

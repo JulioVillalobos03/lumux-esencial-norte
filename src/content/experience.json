@@ -1,0 +1,75 @@
+{
+  "kind": "architecture",
+  "manifesto": {
+    "title": "La arquitectura empieza donde termina el ruido.",
+    "description": "Un muro que acompaña el paisaje. Un patio que deja entrar el día. Un espacio que no necesita explicarse para sentirse propio.",
+    "note": "01 / Una forma de mirar"
+  },
+  "journey": {
+    "title": "Un espacio. Tres maneras de entenderlo.",
+    "description": "Sigue el recorrido: del terreno a la estructura, de la estructura a la luz.",
+    "mode": "pavilion",
+    "fallback": "/images/model.svg",
+    "label": "Pabellón del patio · Exploración espacial",
+    "phases": [
+      "01 — El lugar",
+      "02 — La estructura",
+      "03 — La luz"
+    ],
+    "controls": [
+      {
+        "label": "Recorrido",
+        "value": "scroll"
+      },
+      {
+        "label": "Volumen",
+        "value": "solid"
+      },
+      {
+        "label": "Despiece",
+        "value": "exploded"
+      }
+    ]
+  },
+  "materials": {
+    "title": "La materia también cuenta una historia.",
+    "description": "Tres maneras de dar peso, temperatura y textura a un espacio. Cambia el acabado de la maqueta del recorrido.",
+    "items": [
+      {
+        "title": "Piedra",
+        "description": "Superficies que reciben la luz sin perder su carácter.",
+        "value": "stone"
+      },
+      {
+        "title": "Madera",
+        "description": "Calidez, sombra y el ritmo natural de sus vetas.",
+        "value": "wood"
+      },
+      {
+        "title": "Cal",
+        "description": "Un fondo sereno para las pequeñas variaciones del día.",
+        "value": "lime"
+      }
+    ]
+  },
+  "territory": {
+    "title": "Dejar que el lugar dibuje el proyecto.",
+    "description": "Antes del primer plano, miramos la pendiente, la vegetación y el camino del sol. Diseñar es encontrar una manera de pertenecer.",
+    "image": "/images/landscape.webp",
+    "imageAlt": "Casa conceptual de caliza integrada a una ladera de montaña. Imagen generada."
+  },
+  "journal": {
+    "title": "Notas desde la mesa de trabajo.",
+    "description": "Preguntas que abren una dirección.",
+    "items": [
+      {
+        "title": "¿Dónde empieza una casa?",
+        "description": "En escuchar cómo se vive hoy y qué podría cambiar mañana. El programa se construye desde lo cotidiano."
+      },
+      {
+        "title": "La sombra como material",
+        "description": "Una cubierta puede hacer mucho más que proteger: mide el día, enmarca una vista y reúne el espacio."
+      }
+    ]
+  }
+}
